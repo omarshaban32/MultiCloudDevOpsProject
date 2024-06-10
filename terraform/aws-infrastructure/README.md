@@ -22,6 +22,29 @@ Terraform is an open-source infrastructure as code (IaC) tool developed by Hashi
 
 In this walkthrough, we’ll set up a basic AWS infrastructure that includes a VPC, subnets, security groups, and an EC2 instance.
 
+```
+aws-infrastructure/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── vpc/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+├── subnets/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+├── security-groups/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+└── ec2/
+    ├── main.tf
+    ├── variables.tf
+    └── outputs.tf
+```
+
 #### Step 1: Install Terraform
 
 First, download and install Terraform from the [official website](https://www.terraform.io/downloads.html).
