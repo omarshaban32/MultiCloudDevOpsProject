@@ -17,7 +17,9 @@ pipeline {
         stage('unittest') {
             steps {
                 script {
-                    unittest()
+                    dir('application') {
+                        unittest()
+                    }
                 }
             }
         }
@@ -26,7 +28,9 @@ pipeline {
         stage('buildunittest') {
             steps {
                 script {
-                    buildunittest()
+                    dir('application') {
+                        buildunittest()
+                    }
                 }
             }
         }
@@ -34,7 +38,9 @@ pipeline {
         stage('sonarqube') {
             steps {
                 script {
-                    sonarQubeAnalysis()
+                    dir('application') {
+                        sonarQubeAnalysis()
+                    }
                 }
             }
         }
@@ -44,7 +50,9 @@ pipeline {
         stage('Build and push Docker Image') {
             steps {
                 script {
-                    buildpushDockerImage("${DockerHubCredentialsID}", "${DOCKER_IMAGE}") 
+                    dir('application') {
+                        buildpushDockerImage("${DockerHubCredentialsID}", "${DOCKER_IMAGE}")
+                    }
                 }
             }
         }
