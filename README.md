@@ -8,7 +8,6 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
 - [Terraform Setup](#terraform-setup)
 - [Ansible Setup](#ansible-setup)
 - [Jenkins Configuration](#jenkins-configuration)
@@ -26,12 +25,7 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 - OpenShift Cluster
 - DockerHub Account
 
-## Project Structure
 
-```
-
-
-```
 ## Terraform Setup
 
 1. **Clone the Repository:**
