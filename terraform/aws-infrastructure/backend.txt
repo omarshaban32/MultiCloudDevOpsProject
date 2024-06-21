@@ -1,0 +1,65 @@
+terraform {
+  backend "s3" {
+    bucket         = "omarshaban32-s3-b1b2b3b4b5b6b7b8b9"
+    key            = "~/MultiCloudDevOpsProject/terraform/aws-infrastructure/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-lock-table"
+    encrypt        = true
+  }
+}
+
+resource "aws_cloudwatch_log_group" "app_log_group" {
+  name              = var.log_group_name
+  retention_in_days = var.retention_in_days
+}
+
+resource "aws_cloudwatch_metric_alarm" "high_cpu" {
+  alarm_name          = var.alarm_name
+  comparison_operator = var.comparison_operator
+  evaluation_periods  = var.evaluation_periods
+  metric_name         = var.metric_name
+  namespace           = var.namespace
+  period              = var.period
+  statistic           = var.statistic
+  threshold           = var.threshold
+  alarm_description   = var.alarm_description
+  actions_enabled     = var.actions_enabled
+
+  dimensions = {
+    InstanceId = module.ec2.instance_id
+  }
+
+  alarm_actions = var.alarm_actions
+}
+
+resource "aws_iam_policy" "cloudwatch_logs_policy" {
+  name        = var.policy_name
+  description = var.policy_description
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:DescribeLogStreams"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role" "app_role" {
+  name = var.role_name
+
+  assume_role_policy = var.assume_role_policy
+}
+
+resource "aws_iam_role_policy_attachment" "attach_cloudwatch_logs_policy" {
+  role       = aws_iam_role.app_role.name
+  policy_arn = aws_iam_policy.cloudwatch_logs_policy.arn
+}
