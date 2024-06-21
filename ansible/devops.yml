@@ -1,0 +1,12 @@
+---
+- name: Setup Docker, Jenkins, sonarqube, and OpenShift CLI
+  hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  become: yes
+  roles:
+    - docker
+    - jenkins
+    - sonarqube
+    - openshift_cli
+
