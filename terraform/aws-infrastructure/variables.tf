@@ -49,7 +49,7 @@ variable "public_subnet_cidrs" {
 variable "instance_type" {
   description = "The type of EC2 instance to use"
   type        = string
-  default     = "t3.medium"
+  default     = "t3.large"
 }
 
 variable "ami" {
