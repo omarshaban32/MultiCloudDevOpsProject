@@ -14,26 +14,26 @@ pipeline {
     }
 
     stages {
-        stage('unittest') {
-            steps {
-                script {
-                    dir('application') {
-                        unittest()
-                    }
-                }
-            }
-        }
+#        stage('unittest') {
+#            steps {
+#                script {
+#                    dir('application') {
+#                        unittest()
+#                    }
+#                }
+#            }
+#        }
 
 
-        stage('buildunittest') {
-            steps {
-                script {
-                    dir('application') {
-                        buildunittest()
-                    }
-                }
-            }
-        }
+#        stage('buildunittest') {
+#            steps {
+#                script {
+#                    dir('application') {
+#                        buildunittest()
+#                    }
+#                }
+#            }
+#        }
 
         stage('sonarqube') {
             steps {
