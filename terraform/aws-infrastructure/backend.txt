@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "omarshaban32-s3-b1b2b3b4b5b6b7b8b9"
+    bucket         = "omarshaban32-s3-c1c2c3c4"
     key            = "~/MultiCloudDevOpsProject/terraform/aws-infrastructure/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-lock-table"
