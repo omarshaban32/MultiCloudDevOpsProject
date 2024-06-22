@@ -8,6 +8,7 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Project Structure](#project-structure)
 - [Terraform Setup](#terraform-setup)
 - [Ansible Setup](#ansible-setup)
 - [Jenkins Configuration](#jenkins-configuration)
@@ -25,6 +26,89 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 - OpenShift Cluster
 - DockerHub Account
 
+## Project Structure
+
+```
+├── terraform/aws-infrastructure/
+│    ├── modules/
+│    │   ├── vpc/
+│    │   │   ├── main.tf
+│    │   │   ├── variables.tf
+│    │   │   └── outputs.tf
+│    │   ├── ec2/
+│    │   │   ├── main.tf
+│    │   │   ├── variables.tf
+│    │   │   └── outputs.tf
+│    │   ├── cloudwatch/
+│    │   │   ├── main.tf
+│    │   │   ├── variables.tf
+│    │   │   └── outputs.tf
+│    │   ├── dynamodb/
+│    │   │   ├── main.tf
+│    │   │   ├── variables.tf
+│    │   │   └── outputs.tf
+│    │   ├── s3/
+│    │   │   ├── main.tf
+│    │   │   ├── variables.tf
+│    │   │   └── outputs.tf
+│    │   ├── securitygroups/
+│    │   │   ├── main.tf
+│    │   │   ├── variables.tf
+│    │   │   └── outputs.tf
+│    │   ├── subnets/
+│    │   │   ├── main.tf
+│    │   │   ├── variables.tf
+│    │   │   └── outputs.tf
+│    ├── main.tf
+│    ├── variables.tf
+│    ├── outputs.tf
+│    ├── provider.tf
+│    ├── terraform.tfvars
+│    └── backend.txt
+├── ansible/
+│   ├── roles/
+│   │   ├── docker/
+│   │   │   ├── tasks/
+│   │   │   │   └── main.yml
+│   │   │   ├── vars/
+│   │   │   │   └── main.yml
+│   │   ├── jenkins/
+│   │   │   ├── tasks/
+│   │   │   │   └── main.yml
+│   │   │   ├── vars/
+│   │   │   │   └── main.yml
+│   │   ├── openshift_cli/
+│   │   │   ├── tasks/
+│   │   │   │   └── main.yml
+│   │   │   ├── vars/
+│   │   │   │   └── main.yml
+│   │   ├── sonarqube/
+│   │   │   ├── tasks/
+│   │   │   │   └── main.yml
+│   │   │   ├── vars/
+│   │   │   │   └── main.yml
+│   │   └── README.md
+│   ├── ansible.cfg
+│   ├── aws_ec2.yml
+│   └── devops.yml
+├── application
+├── screenshots
+├── oc
+│   ├── deployment.yaml
+│   ├── route.yaml
+│   └── service.yaml
+├── jenkins-shared-library
+│   └── vars
+│       ├── buildpushDockerImage.groovy
+│       ├── buildunittest.groovy
+│       ├── deployOnOc.groovy
+│       ├── editNewImage.groovy
+│       ├── unittest.groovy
+│       └── sonarQubeAnalysis.groovy
+├── Jenkinsfile
+└── README.md
+
+```
 
 ## Terraform Setup
 
