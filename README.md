@@ -125,21 +125,21 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 
 3. **Initialize Terraform:**
 
+    ### first run
+   
     ```
     terraform init
-
     ```
     ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/terraform-init.png)
 
-4. **Review the Plan:**
+5. **Review the Plan:**
 
     ```
      terraform plan
-
     ```
     ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/terraform-plan.png)
 
-5. **Apply the Configuration:**
+6. **Apply the Configuration:**
 
     ```
     terraform apply
@@ -149,7 +149,13 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 
     ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/terraform-apply.png)
 
-6. **AWS Resources Created:**
+   ### Second run
+
+    add code in backend.txt to main.tf then Initialize and Apply the Configuration
+
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/main/screenshots/second%20run.png)
+
+8. **AWS Resources Created:**
 
     - EC2 Instances
 
@@ -181,8 +187,7 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 
 1. **Navigate to Ansible Directory:**
     ```
-    cd ../Ansible
-
+    cd ../ansible
     ```
 2. **Install Jenkins, SonarQube, Docker, and Openshift CLI:**
 
@@ -203,7 +208,6 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 
     ```
     ansible-playbook -i aws_ec2.yml devops.yml
-
     ```
     ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/ansible.png)
     ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/ansible-done.png)
@@ -269,7 +273,6 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
    Make sure you have given enough storage space to the ec2 to avoid this error
 
    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-4-space.png)
-
    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build.png)
    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-2.png)
    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-3.png)
@@ -279,8 +282,8 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 
     Ensure the pipeline runs successfully.
 
-![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-5-done.png)
-![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-6-stages.png)
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-5-done.png)
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-6-stages.png)
 
 
 ## Checking Results
@@ -289,11 +292,11 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 
     Review code quality reports on SonarQube.
 
-![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-5-done.png)
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/jenkins-build-5-done.png)
 
-![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/sonarqube-website.png)
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/sonarqube-website.png)
 
-![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/sonarqube-website-2.png)
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/sonarqube-website-2.png)
 
 
 2. **Application Deployment:**
@@ -304,15 +307,14 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 
     ```
     oc get all -n namespace
-
     ```
 
-![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/oc-all.png)
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/oc-all.png)
 
 
-Past It in Your Browser
+    Past It in Your Browser
 
-![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/website.png)
+    ![](https://github.com/omarshaban32/MultiCloudDevOpsProject/blob/dev/screenshots/website.png)
 
 
 ## Contributing
