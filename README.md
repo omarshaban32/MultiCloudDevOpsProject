@@ -8,8 +8,8 @@ This project demonstrates a complete CI/CD pipeline setup for a Java application
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
--- [Project Structure](#project-structure)
--- [Terraform Setup](#terraform-setup)
+- - [Project Structure](#project-structure)
+- - [Terraform Setup](#terraform-setup)
 - [Ansible Setup](#ansible-setup)
 - [Jenkins Configuration](#jenkins-configuration)
 - [Running the Pipeline](#running-the-pipeline)
